@@ -41,7 +41,7 @@ class Matrix:
         string = ""
         for r in self.__data:                  # применим шаблон к каждому элементу матрицы
             for num in r:
-                string += str_align.format(f'{num} ', fill='0', align='>', width=len(str(self.max_data_number))+1)
+                string += str_align.format(f'{num} ', fill='0', align='>', width=len(str(self.max_data_number))+1) if num >= 0 else '-' + str_align.format(f'{num * -1} ', fill='0', align='>', width=len(str(self.max_data_number)))
             string += "\n"
         return string
 
